@@ -14,17 +14,15 @@
     <p id="loading-msg" class="info-msg">Please wait for the first time because our paragraphs are loading...</p>
 
     <div class="card">
-        <div class="stats top-stats">
+        <div class="stats">
             <div class="stat-box accuracy-box">
-                <i class="icon">🎯</i>
                 <span id="accuracy">100</span>
                 <small>Accuracy %</small>
             </div>
 
             <div class="stat-box timer-box">
-                <i class="icon">⏱️</i>
                 <span id="time">60</span>
-                <small>Seconds</small>
+                <small>Seconds Left</small>
                 <div class="timer-settings">
                     <button class="time-btn" data-time="30">30s</button>
                     <button class="time-btn active" data-time="60">1m</button>
@@ -33,7 +31,6 @@
             </div>
 
             <div class="stat-box wpm-box">
-                <i class="icon">⚡</i>
                 <span id="wpm">0</span>
                 <small>WPM</small>
             </div>
@@ -50,9 +47,11 @@
 <div id="result-modal" class="modal">
     <div class="modal-content">
         <h2>Test Complete!</h2>
-        <p>Speed: <span id="final-wpm">0</span> WPM</p>
-        <p>Accuracy: <span id="final-accuracy">0</span>%</p>
-        <button onclick="closeModal()">Try Again</button>
+        <div class="final-results">
+            <p>Speed: <strong id="final-wpm">0</strong> WPM</p>
+            <p>Accuracy: <strong id="final-accuracy">0</strong>%</p>
+        </div>
+        <button onclick="closeModal()" id="modal-close">Try Again</button>
     </div>
 </div>
 
