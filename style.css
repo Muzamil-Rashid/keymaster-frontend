@@ -1,116 +1,72 @@
-/* Mobile-First Design */
 :root {
-    --primary: #4a90e2;
-    --bg: #f4f7f6;
-    --card-bg: #ffffff;
+    --bg-color: #1a1a2e; /* Dark professional background */
+    --card-bg: #16213e;
+    --text-main: #ffffff;
+    --primary: #4ecca3; /* Greenish accent */
+    --error: #e94560; /* Reddish accent */
+    --timer-color: #f1c40f; /* Yellow accent */
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     margin: 0;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
 }
 
-.container {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-}
+.container { width: 100%; max-width: 900px; text-align: center; }
+
+.info-msg { color: #888; font-size: 0.85rem; margin-bottom: 10px; }
 
 .card {
     background: var(--card-bg);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* Stats Layout */
-.stats {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.stat-box {
-    background: #f0f4f8;
-    padding: 10px;
-    border-radius: 10px;
-    min-width: 60px;
-}
-
-/* Timer Buttons */
-.timer-settings {
-    margin-bottom: 15px;
-}
-
-.time-btn {
-    background: none;
-    border: 1px solid var(--primary);
-    padding: 5px 15px;
-    margin: 0 5px;
-    cursor: pointer;
+    padding: 25px;
     border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
-.time-btn.active {
-    background: var(--primary);
-    color: white;
-}
+/* Stats Styling */
+.stats { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px; }
 
+.stat-box { flex: 1; padding: 10px; border-radius: 12px; margin: 0 5px; background: rgba(255,255,255,0.05); }
+
+.accuracy-box { border-bottom: 4px solid var(--primary); color: var(--primary); }
+.timer-box { border-bottom: 4px solid var(--timer-color); color: var(--timer-color); flex: 1.5; }
+.wpm-box { border-bottom: 4px solid var(--primary); color: var(--primary); }
+
+.stat-box span { font-size: 2rem; font-weight: bold; display: block; }
+.stat-box small { font-size: 0.8rem; text-transform: uppercase; opacity: 0.8; }
+
+.timer-settings { margin-top: 10px; display: flex; justify-content: center; gap: 5px; }
+.time-btn { 
+    background: transparent; border: 1px solid var(--timer-color); color: var(--timer-color);
+    padding: 3px 8px; border-radius: 5px; cursor: pointer; font-size: 0.7rem;
+}
+.time-btn.active { background: var(--timer-color); color: #000; }
+
+/* Typing Area */
 .paragraph {
-    text-align: left;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    min-height: 100px;
+    text-align: left; font-size: 1.3rem; line-height: 1.7; margin: 20px 0;
+    color: #94a3b8; user-select: none;
 }
+
+/* CORRECT/INCORRECT COLORS */
+.paragraph span.correct { color: #4ecca3; text-shadow: 0 0 5px #4ecca3; }
+.paragraph span.incorrect { background-color: #e94560; color: white; border-radius: 2px; }
 
 textarea {
-    width: 100%;
-    height: 120px;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    resize: none;
-    font-size: 1rem;
-    box-sizing: border-box;
+    width: 100%; height: 120px; background: rgba(0,0,0,0.3); color: white;
+    border: 2px solid #2d3436; border-radius: 10px; padding: 15px; font-size: 1.1rem;
 }
 
-/* Modal Style */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
+#restart {
+    margin-top: 20px; padding: 12px 35px; border-radius: 30px;
+    background: var(--primary); color: #1a1a2e; font-weight: bold; cursor: pointer; border: none;
 }
 
-.modal-content {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-/* Tablet & Mobile Adjustments */
-@media (max-width: 600px) {
-    h1 { font-size: 1.8rem; }
-    .paragraph { font-size: 1rem; }
-    .card { padding: 15px; }
-    /* Landscape mode adjustments */
-    @media (orientation: landscape) {
-        .container { display: flex; flex-direction: column; }
-        textarea { height: 80px; }
-    }
-}
-
-.info-msg {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-}
+/* Result Modal */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; }
+.modal-content { background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center; border: 2px solid var(--primary); }
