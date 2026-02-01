@@ -14,7 +14,7 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .container { width: 100%; max-width: 850px; text-align: center; }
@@ -50,7 +50,7 @@ body {
 /* Paragraph & Typing Colors */
 .paragraph {
     text-align: left; font-size: 1.25rem; line-height: 1.7; margin: 15px 0;
-    color: #cbd5e1; min-height: 100px;
+    color: #cbd5e1; min-height: 80px;
 }
 .paragraph span.correct { color: var(--primary); text-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
 .paragraph span.incorrect { background-color: var(--error); color: white; border-radius: 3px; }
@@ -75,6 +75,7 @@ textarea {
     .timer-box { order: -1; flex-basis: 100%; }
     .paragraph { font-size: 1.1rem; }
 }
+
 
 
 
