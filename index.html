@@ -2,40 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Typing Speed Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyMaster - Typing Speed Test</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
     <h1>KeyMaster</h1>
-    <p class="subtitle">Test your speed, accuracy, and focus</p>
+    <p class="subtitle">Master your keystrokes</p>
+    
+    <div id="loading-msg" class="info-msg">Waking up the server... Please wait a few seconds.</div>
 
     <div class="card">
+        <div class="stats top-stats">
+            <div class="stat-box">
+                <span id="wpm">0</span>
+                <small>WPM</small>
+            </div>
+            <div class="stat-box">
+                <span id="accuracy">100</span>
+                <small>ACC %</small>
+            </div>
+            <div class="stat-box">
+                <span id="time">0</span>
+                <small>SEC</small>
+            </div>
+        </div>
+
+        <div class="timer-settings">
+            <button class="time-btn" data-time="30">30s</button>
+            <button class="time-btn active" data-time="60">1m</button>
+            <button class="time-btn" data-time="120">2m</button>
+        </div>
+
         <div id="paragraph" class="paragraph"></div>
 
         <textarea id="input" placeholder="Start typing here..." disabled></textarea>
 
-        <div class="stats">
-            <div>
-                <span id="wpm">0</span>
-                <small>WPM</small>
-            </div>
-            <div>
-                <span id="accuracy">100</span>
-                <small>Accuracy %</small>
-            </div>
-            <div>
-                <span id="errors">0</span>
-                <small>Errors</small>
-            </div>
-            <div>
-                <span id="time">0</span>
-                <small>Seconds</small>
-            </div>
-        </div>
-
         <button id="restart">Start Test</button>
+    </div>
+</div>
+
+<div id="result-modal" class="modal">
+    <div class="modal-content">
+        <h2>Test Complete!</h2>
+        <div class="final-stats">
+            <p>Speed: <strong id="final-wpm">0</strong> WPM</p>
+            <p>Accuracy: <strong id="final-accuracy">0</strong>%</p>
+        </div>
+        <button onclick="closeModal()">Try Again</button>
     </div>
 </div>
 
