@@ -1,108 +1,116 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+/* Mobile-First Design */
+:root {
+    --primary: #4a90e2;
+    --bg: #f4f7f6;
+    --card-bg: #ffffff;
 }
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 20px;
 }
 
 .container {
     width: 100%;
     max-width: 800px;
-    padding: 20px;
     text-align: center;
 }
 
-h1 {
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    color: #ddd;
-    margin-bottom: 25px;
-}
-
 .card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Stats Layout */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: #f0f4f8;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 60px;
+}
+
+/* Timer Buttons */
+.timer-settings {
+    margin-bottom: 15px;
+}
+
+.time-btn {
+    background: none;
+    border: 1px solid var(--primary);
+    padding: 5px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.time-btn.active {
+    background: var(--primary);
+    color: white;
 }
 
 .paragraph {
-    background: #f4f6fa;
-    padding: 15px;
-    border-radius: 8px;
     text-align: left;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
     line-height: 1.6;
-    font-size: 16px;
-}
-
-.correct {
-    color: #2ecc71;
-}
-
-.incorrect {
-    color: #e74c3c;
-    text-decoration: underline;
+    margin-bottom: 20px;
+    min-height: 100px;
 }
 
 textarea {
     width: 100%;
     height: 120px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    padding: 12px;
-    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
     resize: none;
-    outline: none;
+    font-size: 1rem;
+    box-sizing: border-box;
 }
 
-textarea:focus {
-    border-color: #667eea;
+/* Modal Style */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
 }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 20px;
-}
-
-.stats div {
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
 }
 
-.stats span {
-    font-size: 26px;
-    font-weight: bold;
-    color: #333;
+/* Tablet & Mobile Adjustments */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    .paragraph { font-size: 1rem; }
+    .card { padding: 15px; }
+    /* Landscape mode adjustments */
+    @media (orientation: landscape) {
+        .container { display: flex; flex-direction: column; }
+        textarea { height: 80px; }
+    }
 }
 
-.stats small {
-    display: block;
-    color: #777;
-}
-
-button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.9;
+.info-msg {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
