@@ -19,7 +19,7 @@ body {
 
 .container { width: 100%; max-width: 850px; text-align: center; }
 
-.info-msg { color: #94a3b8; font-size: 0.9rem; margin-bottom: 10px; }
+.info-msg { color: #94a3b8; font-size: 0.9rem; margin-bottom: 5px; }
 
 .card {
     background: var(--card-bg);
@@ -29,7 +29,7 @@ body {
 }
 
 /* Stats Styling */
-.stats { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 10px; }
+.stats { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 10px; }
 
 .stat-box { flex: 1; padding: 12px; border-radius: 15px; background: rgba(255,255,255,0.03); }
 
@@ -75,5 +75,6 @@ textarea {
     .timer-box { order: -1; flex-basis: 100%; }
     .paragraph { font-size: 1.1rem; }
 }
+
 
 
